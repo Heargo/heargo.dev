@@ -1,0 +1,61 @@
+/********************************
+-------MULTICOLOR BUTTON---------
+********************************/
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F3F3F3;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2f3542;
+  /*cursor: pointer;*/
+  transition: transform 0.4s cubic-bezier(0.23,1.83,0.42,1.19);
+}
+.box:hover {
+    transform: scale(1.05);
+}
+.box p {
+  margin-top: 30px;
+  transform: scale(1.2);
+  position: absolute;
+  font-size: 3rem;
+  letter-spacing: 3px;
+}
+
+.box p{
+  margin-top: 0;
+  font-size: 6vw;
+}
+
+.circle {
+    width: 30vw;
+    height: 33vw;
+    border-radius: 50%;
+    animation: 16s linear infinite spinning;
+    box-shadow: 
+		0 -25px 0 #feac5e,
+		-25px 0 0 #c779d0,
+		0 25px 0 #4bc0c8,
+		25px 0 0 #42db75;
+}
+
+@keyframes spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
