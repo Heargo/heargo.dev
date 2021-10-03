@@ -239,7 +239,7 @@ footer a{
   text-decoration: none;
   color: var(--darkest-blue);
   font-size: 1.2rem;
-  background-color: var(--rose-madder);
+  background-color: var(--orange-peel);
   padding: 0.5rem 0.7rem;
   padding-top: 0.6rem;
   border-radius: 20px;
@@ -511,7 +511,7 @@ footer a{
 }
 
 
-@media (max-width: 430px){
+@media (max-width: 570px){
   #contact h2{
     font-size: 2.5rem;
   }
