@@ -59,6 +59,9 @@ function display_contact(){
 	for (var i = 0; i <phone.length; i++) {
 		phone_final=phone_final+phone[phone_indice[i]]+(i%2!=0?".":"")
 	}
+	//remove last char from phone_final
+	phone_final=phone_final.substring(0,phone_final.length-1)
+	
 	p = document.getElementById("phone");
 	m = document.getElementById("mail");
 	b = document.getElementById("revealButton");
