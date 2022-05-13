@@ -14,7 +14,7 @@
       <h1>{{this.$store.state.txt[this.$store.state.lang]["description"]}}</h1>
       </ScrollParallax>
     </div>
-    <div class="invisibleSpace projects">
+    <div class="projects">
       <div v-for="(p,i) in this.$store.state.projects" :key="p">
         <Project :project="p" :side="i%2==0 ? 'left' : 'right'"></Project>
       </div>
@@ -67,9 +67,9 @@ export default {
 
   .container {
     width: 100%;
-    height: 400vh;
-    background: red;
+    height: 100%;
     background: linear-gradient(to top, $dark,$blue, $marron,$marronlight, $white); /* Standard syntax */
+    
     .invisibleSpace{
       height: 100vh;
     }

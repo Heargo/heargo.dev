@@ -260,7 +260,9 @@ export default {
         z-index: -1;
     }
     @keyframes gradient-animation {
-    0%,33%{opacity: 0.8;}
+    0%{opacity: 0.8;}
+    33%{opacity: 0.6;}
     66%{opacity: 0.7;}
+    80%{opacity: 0.3;}
     }
 </style>
