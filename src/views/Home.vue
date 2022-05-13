@@ -1,21 +1,32 @@
 <template>
   <div class="container">
+    <div>
+      <ScrollParallax :speed="0.3">
+        <div class="square parallax-one" @click="activate()"></div>
+      </ScrollParallax>
+      <ScrollParallax :speed="0.01">
+        <h1 class="name move-text parallax-two">Hugo Rey</h1>
+      </ScrollParallax>
+    </div>
+    <div class="invisibleSpace"></div>
+    <div class="invisibleSpace">
+      <ScrollParallax :speed="0.3">
+      <h1>{{this.$store.state.txt[this.$store.state.lang]["description"]}}</h1>
+      </ScrollParallax>
+    </div>
+    <div class="invisibleSpace">
+      <div v-for="(p,i) in this.$store.state.projects" :key="p">
+        <Project :project="p" :side="i%2==0 ? 'left' : 'right'"></Project>
+      </div>
 
-    <ScrollParallax speed="0.3">
-      <div class="square parallax-one" @click="activate()"></div>
-    </ScrollParallax>
-    <ScrollParallax speed="0.01">
-      <h1 class="name move-text parallax-two">Hugo Rey</h1>
-    </ScrollParallax>
-    <div class="invisibleSpace"></div>
-    <div class="invisibleSpace"></div>
-    <Project></Project>
+    </div>
   </div>
 </template>
 
 <script>
 import Project from '@/components/Project.vue'
 import ScrollParallax from 'vue3-parallax/src/components/ScrollParallax.vue';
+
 export default {
   name: 'Home',
   components: {
@@ -53,10 +64,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  body {
-    margin: 0;
-    padding: 0;
-  }
 
   .container {
     width: 100%;
@@ -68,8 +75,8 @@ export default {
     }
     .square {
       position: absolute;
-      top: 250px;
-      left: calc(50vw - 200px);
+      top: calc(50vh - 175px);
+      left: calc(50vw - 175px);
       width: 350px;
       height: 350px;
       
@@ -80,6 +87,7 @@ export default {
       background: linear-gradient(to bottom, $white, $dark-red);
 
       @include width-under(500px) {
+        top: calc(50vh - 100px);
         left: calc(50vw - 100px);
         width: 200px;
         height: 200px;
@@ -89,7 +97,10 @@ export default {
          animation: squareBtn 0.15s;
       }
       &.drop{
-        animation: squareMove 2s;
+        animation: squareDropBig 2s;
+        @include width-under(500px) {
+          animation: squareDropSmall 2s;
+        }
       }
     }
 
@@ -103,27 +114,40 @@ export default {
       padding: 0;
       
       position: absolute;
-      top: 402px;
-      left: calc(50vw - 7.5ch);
+      top: calc(50vh - 25px);
+      left: calc(50vw - 6.4ch);
       color:$dark;
       
-      animation: textMove 2.5s;
+      animation: textDropBig 2.5s;
+      @include width-under(500px) {
+        animation: textDropSmall 2.5s;
+      }
+
+      @include width-under(500px) {
+        font-size: 1.5rem;
+        letter-spacing: .9rem;
+        top: calc(50vh - 15px);
+        left: calc(50vw - 6.7ch);
+      }
     }
   }
 
-  @keyframes squareMove {
+  @keyframes squareDropBig {
     from {top: -500px;}
-    to {top: 250px;}
+    to { top: calc(50vh - 175px);}
+  }
+  @keyframes squareDropSmall {
+    from {top: -500px;}
+    to { top: calc(50vh - 100px);}
   }
 
-  @keyframes circleMove {
+  @keyframes textDropBig {
     from {top: -500px;}
-    to {top: 300px;}
+    to {top: calc(50vh - 25px);}
   }
-
-  @keyframes textMove {
+  @keyframes textDropSmall {
     from {top: -500px;}
-    to {top: 402px;}
+    to {top: calc(50vh - 15px);}
   }
 
   @keyframes squareBtn {
