@@ -14,7 +14,7 @@
       <h1>{{this.$store.state.txt[this.$store.state.lang]["description"]}}</h1>
       </ScrollParallax>
     </div>
-    <div class="invisibleSpace">
+    <div class="invisibleSpace projects">
       <div v-for="(p,i) in this.$store.state.projects" :key="p">
         <Project :project="p" :side="i%2==0 ? 'left' : 'right'"></Project>
       </div>
@@ -72,6 +72,12 @@ export default {
     background: linear-gradient(to top, $dark,$blue, $marron,$marronlight, $white); /* Standard syntax */
     .invisibleSpace{
       height: 100vh;
+    }
+    .projects{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
     .square {
       position: absolute;
@@ -152,11 +158,11 @@ export default {
 
   @keyframes squareBtn {
     from {
-      top:250px;
+      top:calc(50vh - 175px);
       box-shadow: 10px 10px 0px 0px $dark2;
     }
     to {
-      top: 260px;
+      top: calc(50vh - 165px);
       box-shadow: 0px 0px 0px 0px $dark2;
     }
   }

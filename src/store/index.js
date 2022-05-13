@@ -15,27 +15,33 @@ export default createStore({
     },
     projects:[
       {
+        photo:"palettes.jpg",
         fr:{
           title:"Project 1",
           date:"2019",
           description:"blabla",
+          labels:["VueJS","Projet personnel"],
         },
         en:{
           title:"Project 1",
           date:"2019",
           description:"blabla",
+          labels:["VueJS","Personal project"],
         }
       },
       {
+        photo:"palettes.jpg",
         fr:{
           title:"Project 1",
           date:"2019",
           description:"blabla",
+          labels:["VueJS","Projet personnel"],
         },
         en:{
           title:"Project 1",
           date:"2019",
           description:"blabla",
+          labels:["VueJS","Personal project"],
         }
       }
     ],
