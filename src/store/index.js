@@ -3,18 +3,21 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     click_count: 0,
+    score:0,
     lang:"en",
     txt:{
       fr:{
         title:"Etudiant en CMI informatique",
         description:"Etudiant en 3ème année à L'Université Savoie Mont Blanc, je suis à l'écoute, toujours curieux et créatif.",
         discoverBtn:"Découvrir",
+        score:["Bravo !","Génial !","Incroyable !","Excellent !","Magnifique !","Fantastique !","Superbe !","Incroyable !","Chomage ?"],
 
       },
       en:{
         title:"Computer sciences student",
         description:"Student in 3rd year at the Université Savoie Mont Blanc, I'm a good listener, always curious and creative.",
         discoverBtn:"Discover",
+        score:["Good job !","Great !","Amazing !","Excellent !","Wonderful !","Fantastic !","Superb !","Incredible !","Unemployed ?"],
       }
     },
     projects:[

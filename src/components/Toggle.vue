@@ -27,7 +27,7 @@ $padding:4px;
     border-radius: 20px;
     padding:$padding;
     cursor: pointer;
-    z-index: 1;
+    z-index: 100;
     img{
         position: absolute;
         top:$padding;

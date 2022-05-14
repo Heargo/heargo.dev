@@ -1,7 +1,15 @@
 <template>
   <div class="container">
-    <img class="side" src="@/assets/svg/side.svg" alt="top" :style="'width:'+(80+this.$store.state.click_count%30)+'vw'">
-    <p v-if="parseInt(this.$store.state.click_count/30)>0" class="Number">{{parseInt(this.$store.state.click_count/30)}}</p>
+    <img class="side" src="@/assets/svg/side.svg" alt="top" :style="'width:'+(80+this.$store.state.click_count%10)+'vw'">
+    <p v-if="parseInt(this.$store.state.score)<=9" class="txt">
+      {{this.$store.state.txt[this.$store.state.lang].score[this.$store.state.score-1]}}
+    </p>
+    <p v-else class="txt">
+      {{this.$store.state.txt[this.$store.state.lang].score[this.$store.state.txt[this.$store.state.lang].score.length-1]}}
+    </p>
+    <div v-if="parseInt(this.$store.state.score)>0" class="Number">
+      <p class="num">{{parseInt(this.$store.state.score)}}</p>
+    </div>
     <Toggle></Toggle>
     <div id="home">
       <ScrollParallax :speed="0.3">
@@ -57,6 +65,9 @@ export default {
       square.classList.remove("active");
       this.animate(square,"active",150);
       this.$store.state.click_count++;
+      if(this.$store.state.click_count%10==0){
+        this.$store.state.score++;
+      }
     },
     drop(){
       //get square
@@ -200,13 +211,31 @@ export default {
     position: fixed;
     top: 0;
     right:0;
-    font-size: 40vw;
-    font-family: 'BioRhyme', sans-serif;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 1.3rem;
-    color:$dark;
-    opacity: 0.7;
-    margin: 0;
+    display: flex;
+    flex-direction: column;    
+    p{
+      margin:0;
+    }
+    .num{
+      font-size: 40vw;
+      line-height: 40vw;
+      font-family: 'BioRhyme', sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+      color:$dark;
+      opacity: 0.7;
+      margin: 0;
+    }
    }
+    .txt{
+      top:1rem;
+      right: 1rem;
+      text-transform: uppercase;
+      position: absolute;
+      font-size: clamp(0.7rem, 1vw, 2rem);
+      letter-spacing: .4rem;
+      color:$dark;
+      opacity: 0.7;
+      margin:0;
+    }
 </style>

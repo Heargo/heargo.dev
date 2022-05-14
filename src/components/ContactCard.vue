@@ -3,7 +3,7 @@
         <div class="infos">
             <h2>{{this.$store.state.txt[this.$store.state.lang].title}}</h2>
             <p>{{this.$store.state.txt[this.$store.state.lang].description}}</p>
-            <a href="https://cv.heargo.dev/CV_Hugo_Rey.pdf" target="_blank">CV</a>
+            <a :href="'https://cv.heargo.dev/CV_Hugo_Rey_'+this.$store.state.lang+'.pdf'" target="_blank">CV</a>
         </div>
         <img src="@/assets/svg/dev.svg" alt="">
     </div>
@@ -43,7 +43,7 @@ export default {
         width:500px ;
         @include width-under(1000px){
             width:95% ;
-            left: 0;
+            left: -16px;
             top: 200px;
         }
         padding:1.5rem;
