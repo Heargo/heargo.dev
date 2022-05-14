@@ -3,18 +3,23 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     click_count: 0,
+    lang:"en",
     txt:{
       fr:{
-        description:"Etudiant informatique Licence 3",
+        title:"Etudiant en CMI informatique",
+        description:"Etudiant en 3ème année à L'Université Savoie Mont Blanc, je suis à l'écoute, toujours curieux et créatif.",
         discoverBtn:"Découvrir",
+
       },
       en:{
-        description:"Computer Science Student 3rd year",
+        title:"Computer sciences student",
+        description:"Student in 3rd year at the Université Savoie Mont Blanc, I'm a good listener, always curious and creative.",
         discoverBtn:"Discover",
       }
     },
     projects:[
       {
+        id:0,
         photo:"palettes.jpg",
         link:"https://palettes.heargo.dev/",
         fr:{
@@ -31,6 +36,7 @@ export default createStore({
         }
       },
       {
+        id:1,
         photo:"jourune.jpg",
         link:"https://jourune.fr/",
         fr:{
@@ -47,6 +53,7 @@ export default createStore({
         }
       },
       {
+        id:2,
         photo:"okydoky.jpg",
         link:"https://sb.sinux.sh/okydoky/",
         fr:{
@@ -63,6 +70,7 @@ export default createStore({
         }
       },
       {
+        id:3,
         photo:"lostcolor.jpg",
         link:"https://github.com/Heargo/LostColor",
         fr:{
@@ -79,6 +87,7 @@ export default createStore({
         }
       },
       {
+        id:4,
         photo:"undercover.png",
         link:"https://sb.sinux.sh/undercover/",
         fr:{
@@ -95,6 +104,7 @@ export default createStore({
         }
       },
       {
+        id:5,
         photo:"visi.png",
         link:"https://www.lama.univ-savoie.fr/mediawiki/index.php/G%C3%A9n%C3%A9ration_fractale_de_terrains",
         fr:{
@@ -111,7 +121,7 @@ export default createStore({
         }
       }
     ],
-    lang:"en"
+    
   },
   mutations: {
     increment (state) {

@@ -7,11 +7,7 @@
       </svg>
       <div id="menu" v-show="menuActive">
         <router-link @click="closeNav" to="/">Home</router-link>
-        <router-link @click="closeNav" to="/blob">Projets</router-link>
-        <router-link @click="closeNav" to="/blob">Photos</router-link>
-        <router-link @click="closeNav" to="/blob">Contact</router-link>
       </div>
-        
   </div>
 </template>
 <script>

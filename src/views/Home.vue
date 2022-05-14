@@ -1,6 +1,9 @@
 <template>
   <div class="container">
-    <div>
+    <img class="side" src="@/assets/svg/side.svg" alt="top" :style="'width:'+(80+this.$store.state.click_count%30)+'vw'">
+    <p v-if="parseInt(this.$store.state.click_count/30)>0" class="Number">{{parseInt(this.$store.state.click_count/30)}}</p>
+    <Toggle></Toggle>
+    <div id="home">
       <ScrollParallax :speed="0.3">
         <div class="square parallax-one" @click="activate()"></div>
       </ScrollParallax>
@@ -9,29 +12,29 @@
       </ScrollParallax>
     </div>
     <div class="invisibleSpace"></div>
-    <div class="invisibleSpace">
-      <ScrollParallax :speed="0.3">
-      <h1>{{this.$store.state.txt[this.$store.state.lang]["description"]}}</h1>
-      </ScrollParallax>
-    </div>
-    <div class="projects">
+    <div class="data">
+      <ContactCard id="cv"></ContactCard>
+      <div id="projets"></div>
       <div v-for="(p,i) in this.$store.state.projects" :key="p">
         <Project :project="p" :side="i%2==0 ? 'left' : 'right'"></Project>
       </div>
-
     </div>
   </div>
 </template>
 
 <script>
 import Project from '@/components/Project.vue'
+import ContactCard from '@/components/ContactCard.vue'
 import ScrollParallax from 'vue3-parallax/src/components/ScrollParallax.vue';
+import Toggle from '@/components/Toggle.vue';
 
 export default {
   name: 'Home',
   components: {
     ScrollParallax,
-    Project
+    Project,
+    ContactCard,
+    Toggle
   },
   mounted(){
     //get square 
@@ -71,14 +74,18 @@ export default {
     background: linear-gradient(to top, $dark,$blue, $marron,$marronlight, $white); /* Standard syntax */
     
     .invisibleSpace{
-      height: 100vh;
+      height: 110vh;
     }
-    .projects{
+    .data,.card{
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       width: 100%;
+    }
+    .card{
+      justify-content: flex-start;
+      height: 100vh;
     }
     .square {
       position: absolute;
@@ -101,7 +108,10 @@ export default {
       }
 
       &.active{
-         animation: squareBtn 0.15s;
+        animation: squareBtn 0.15s;
+        @include width-under(500px) {
+        animation: squareBtnSmall 0.15s;
+        }
       }
       &.drop{
         animation: squareDropBig 2s;
@@ -112,17 +122,17 @@ export default {
     }
 
     .name {
-      font-family: 'Sarpanch', sans-serif;
+      font-family: 'BioRhyme', sans-serif;
       text-transform: uppercase;
       text-align: center;
-      letter-spacing: 1.3rem;
+      letter-spacing: 1rem;
       font-size: 2.5rem;
       margin: 0;
       padding: 0;
       
       position: absolute;
       top: calc(50vh - 25px);
-      left: calc(50vw - 6.4ch);
+      left: calc(50vw - 6.5ch);
       color:$dark;
       
       animation: textDropBig 2.5s;
@@ -132,9 +142,9 @@ export default {
 
       @include width-under(500px) {
         font-size: 1.5rem;
-        letter-spacing: .9rem;
+        letter-spacing: .8rem;
         top: calc(50vh - 15px);
-        left: calc(50vw - 6.7ch);
+        left: calc(50vw - 6.85ch);
       }
     }
   }
@@ -167,4 +177,36 @@ export default {
       box-shadow: 0px 0px 0px 0px $dark2;
     }
   }
+  @keyframes squareBtnSmall {
+    from {
+      top:calc(50vh - 100px);
+      box-shadow: 10px 10px 0px 0px $dark2;
+    }
+    to {
+      top: calc(50vh - 95px);
+      box-shadow: 0px 0px 0px 0px $dark2;
+    }
+  }
+  .side{
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 80vw;
+    height: 100vh;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+  }
+  .Number{
+    position: fixed;
+    top: 0;
+    right:0;
+    font-size: 40vw;
+    font-family: 'BioRhyme', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1.3rem;
+    color:$dark;
+    opacity: 0.7;
+    margin: 0;
+   }
 </style>

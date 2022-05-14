@@ -1,13 +1,13 @@
 <template >
-    <div class="containerProject" :id="'containerProject-'+project[this.$store.state.lang].title">
+    <div class="containerProject" :id="'containerProject-'+project.id">
         <div :class="{'infos':true,'left':side=='left','right':side=='right'}" >
             <h2 class="title">{{project[this.$store.state.lang].title}}</h2>
             <p class="date">{{project[this.$store.state.lang].date}}</p>
             <p class="description">{{project[this.$store.state.lang].description}}</p>
-            <button>{{this.$store.state.txt[this.$store.state.lang]["discoverBtn"]}}</button>
+            <button @click="redirect(project.link)">{{this.$store.state.txt[this.$store.state.lang]["discoverBtn"]}}</button>
             <div :class="{'gradient-background':true,'left':side=='left','right':side=='right'}"></div>
         </div>
-        <div class="secondCard" :id="'secondCard-'+project[this.$store.state.lang].title">
+        <div class="secondCard" :id="'secondCard-'+project.id">
             <div class="labels">
                 <p v-for="l in project[this.$store.state.lang].labels" :key="l">{{l}}</p>
             </div>
@@ -20,9 +20,12 @@ export default {
     name: 'Project',
     props: ['project', 'side'],
     mounted(){
-        var container = document.getElementById('containerProject-'+this.project[this.$store.state.lang].title),
-        inner = document.getElementById('secondCard-'+this.project[this.$store.state.lang].title);
+        var idContainer = 'containerProject-'+this.project.id;
+        var idInner = 'secondCard-'+this.project.id;
+        var container = document.getElementById(idContainer),
+        inner = document.getElementById(idInner);
 
+        
         //----------------------------------------------------
 
         var counter = 0;
@@ -87,6 +90,11 @@ export default {
         container.onmousemove = onMouseMoveHandler;
         container.onmouseleave = onMouseLeaveHandler;
         container.onmouseenter = onMouseEnterHandler;
+    },
+    methods:{
+        redirect(link){
+            window.open(link, '_blank');
+        }
     }
 }
 </script>
@@ -183,6 +191,7 @@ export default {
             padding: 0.5rem 1rem;
             border-radius: 20px;
             transition: all .5s ease;
+            cursor: pointer;
             &:hover{
                 background-color: $white;
                 color:$better-blue;
@@ -202,6 +211,11 @@ export default {
 
         @include width-under(1000px){
             display: none;
+        }
+        &:hover{
+           .photo{
+               opacity: 0.8;
+           }
         }
 
         .labels{
