@@ -114,13 +114,13 @@ export default createStore({
           title:"Generation fractale de terrain",
           date:"2020",
           description:"Développement d'une application python permetant de generer des terrains aléatoirement en 2d et 3D.",
-          labels:["Projet universitaire","Fullstack","Licence 2","Web"],
+          labels:["Projet universitaire","Licence 1","Python","Génération procédurale"],
         },
         en:{
           title:"Fragile terrain generation",
           date:"2020",
           description:"Development of a python application to generate random 2d and 3d terrains.",
-          labels:["School project","Fullstack","2nd year","Web"],
+          labels:["School project","1st year","Python","Procedural generation"],
         }
       }
     ],
