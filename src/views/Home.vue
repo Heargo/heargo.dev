@@ -1,6 +1,9 @@
 <template>
   <div class="container">
+    <!-- background svg -->
     <img class="side" src="@/assets/svg/side.svg" alt="top" :style="'width:'+(80+this.$store.state.click_count%10)+'vw'">
+    
+    <!-- easter egg -->
     <p v-if="parseInt(this.$store.state.score)<=9" class="txt">
       {{this.$store.state.txt[this.$store.state.lang].score[this.$store.state.score-1]}}
     </p>
@@ -10,7 +13,14 @@
     <div v-if="parseInt(this.$store.state.score)>0" class="Number">
       <p class="num">{{parseInt(this.$store.state.score)}}</p>
     </div>
+
+    <!-- Language Toggle -->
     <Toggle></Toggle>
+
+    <!-- ExternalsLinks -->
+    <ExternalsLinks></ExternalsLinks>
+
+    <!-- Big button -->
     <div id="home">
       <ScrollParallax :speed="0.3">
         <div class="square parallax-one" @click="activate()"></div>
@@ -20,8 +30,13 @@
       </ScrollParallax>
     </div>
     <div class="invisibleSpace"></div>
+
+    <!-- Content -->
     <div class="data">
+      <!-- Cv card -->
       <ContactCard id="cv"></ContactCard>
+
+      <!-- Projects -->
       <div id="projets"></div>
       <div v-for="(p,i) in this.$store.state.projects" :key="p">
         <Project :project="p" :side="i%2==0 ? 'left' : 'right'"></Project>
@@ -35,6 +50,7 @@ import Project from '@/components/Project.vue'
 import ContactCard from '@/components/ContactCard.vue'
 import ScrollParallax from 'vue3-parallax/src/components/ScrollParallax.vue';
 import Toggle from '@/components/Toggle.vue';
+import ExternalsLinks from '@/components/ExternalsLinks.vue';
 
 export default {
   name: 'Home',
@@ -42,7 +58,8 @@ export default {
     ScrollParallax,
     Project,
     ContactCard,
-    Toggle
+    Toggle,
+    ExternalsLinks
   },
   mounted(){
     //get square 
@@ -98,6 +115,11 @@ export default {
       justify-content: flex-start;
       height: 100vh;
     }
+    .data{
+      @include width-under(700px){
+        padding-bottom: 2rem;
+      }
+    }
     .square {
       position: absolute;
       top: calc(50vh - 175px);
@@ -143,7 +165,7 @@ export default {
       
       position: absolute;
       top: calc(50vh - 25px);
-      left: calc(50vw - 6.5ch);
+      left: calc(50vw - 180px);
       color:$dark;
       
       animation: textDropBig 2.5s;
@@ -155,7 +177,7 @@ export default {
         font-size: 1.5rem;
         letter-spacing: .8rem;
         top: calc(50vh - 15px);
-        left: calc(50vw - 6.85ch);
+        left: calc(50vw - 120px);
       }
     }
   }
