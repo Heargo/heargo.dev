@@ -165,7 +165,7 @@ export default {
       
       position: absolute;
       top: calc(50vh - 25px);
-      left: calc(50vw - 6.5ch);
+      left: calc(50vw - 180px);
       color:$dark;
       
       animation: textDropBig 2.5s;
@@ -177,7 +177,7 @@ export default {
         font-size: 1.5rem;
         letter-spacing: .8rem;
         top: calc(50vh - 15px);
-        left: calc(50vw - 6.85ch);
+        left: calc(50vw - 120px);
       }
     }
   }
