@@ -58,7 +58,7 @@ export default createStore({
       {
         id:2,
         photo:"okydoky.jpg",
-        link:"https://sb.sinux.sh/okydoky/",
+        link:"https://docs.google.com/presentation/d/1i40ji1CQChk3njpeW6vigG9gxsOq2lIkMgyx_OPcaps/edit?usp=sharing",
         fr:{
           title:"Okydoky",
           date:"2021",
@@ -91,23 +91,6 @@ export default createStore({
       },
       {
         id:4,
-        photo:"undercover.png",
-        link:"https://sb.sinux.sh/undercover/",
-        fr:{
-          title:"Undercover",
-          date:"2020",
-          description:"Adaptation du jeu multijoueur undercover sur navigateur.",
-          labels:["Projet universitaire","Fullstack","Licence 2","Web"],
-        },
-        en:{
-          title:"Undercover",
-          date:"2020",
-          description:"Adaptation of the multiplayer undercover game on browser.",
-          labels:["School project","Fullstack","2nd year","Web"],
-        }
-      },
-      {
-        id:5,
         photo:"visi.png",
         link:"https://www.lama.univ-savoie.fr/mediawiki/index.php/G%C3%A9n%C3%A9ration_fractale_de_terrains",
         fr:{
@@ -117,7 +100,7 @@ export default createStore({
           labels:["Projet universitaire","Licence 1","Python","Génération procédurale"],
         },
         en:{
-          title:"Fragile terrain generation",
+          title:"Fractal terrain generation",
           date:"2020",
           description:"Development of a python application to generate random 2d and 3d terrains.",
           labels:["School project","1st year","Python","Procedural generation"],
