@@ -22,7 +22,24 @@ export default createStore({
     },
     projects:[
       {
-        id:0,
+        id:5,
+        photo:"etyva.png",
+        link:"https://docs.google.com/presentation/d/1tRIjlll_FDFjRgX97BM8dPnYHrTV2g2btfBeuGNzXuw/edit?usp=sharing",
+        fr:{
+          title:"ET'YVA",
+          date:"2022",
+          description:"Projet universitaire en groupe, création d'une plateforme de covoiturage pour les étudiants inscrits au service des sports de l'USMB.",
+          labels:["VueJS","Projet universitaire","Design","Front-end","Méthode agile"],
+        },
+        en:{
+          title:"ET'YVA",
+          date:"2022",
+          description:"University group project, creation of a carpooling platform for students registered in the USMB sports department.",
+          labels:["VueJS","School project","Design","Front-end","Agile method"],
+        }
+      },
+      {
+        id:4,
         photo:"palettes.jpg",
         link:"https://palettes.heargo.dev/",
         fr:{
@@ -39,7 +56,7 @@ export default createStore({
         }
       },
       {
-        id:1,
+        id:3,
         photo:"jourune.jpg",
         link:"https://jourune.fr/",
         fr:{
@@ -73,7 +90,7 @@ export default createStore({
         }
       },
       {
-        id:3,
+        id:1,
         photo:"lostcolor.jpg",
         link:"https://github.com/Heargo/LostColor",
         fr:{
@@ -90,7 +107,7 @@ export default createStore({
         }
       },
       {
-        id:4,
+        id:0,
         photo:"visi.png",
         link:"https://www.lama.univ-savoie.fr/mediawiki/index.php/G%C3%A9n%C3%A9ration_fractale_de_terrains",
         fr:{
