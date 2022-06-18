@@ -28,7 +28,7 @@ export default createStore({
         fr:{
           title:"ET'YVA",
           date:"2022",
-          description:"Projet universitaire en groupe, création d'une plateforme de covoiturage pour les étudiants inscrits au service des sports de l'USMB.",
+          description:"Projet universitaire en groupe, Plateforme de covoiturage pour les étudiants du service des sports de l'USMB.",
           labels:["VueJS","Projet universitaire","Design","Front-end","Méthode agile"],
         },
         en:{
