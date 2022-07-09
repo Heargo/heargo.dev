@@ -1,5 +1,5 @@
 <template >
-    <div class="containerProject" :id="'containerProject-'+project.id">
+    <div class="containerProject" ref="containerProject">
         <div :class="{'infos':true,'left':side=='left','right':side=='right'}" >
             <h2 class="title">{{project[this.$store.state.lang].title}}</h2>
             <p class="date">{{project[this.$store.state.lang].date}}</p>
@@ -7,7 +7,7 @@
             <button @click="redirect(project.link)">{{this.$store.state.txt[this.$store.state.lang]["discoverBtn"]}}</button>
             <div :class="{'gradient-background':true,'left':side=='left','right':side=='right'}"></div>
         </div>
-        <div class="secondCard" :id="'secondCard-'+project.id">
+        <div class="secondCard" ref="secondCard">
             <div class="labels">
                 <p v-for="l in project[this.$store.state.lang].labels" :key="l">{{l}}</p>
             </div>
@@ -20,10 +20,8 @@ export default {
     name: 'Project',
     props: ['project', 'side'],
     mounted(){
-        var idContainer = 'containerProject-'+this.project.id;
-        var idInner = 'secondCard-'+this.project.id;
-        var container = document.getElementById(idContainer),
-        inner = document.getElementById(idInner);
+        var container = this.$refs.containerProject;
+        var inner = this.$refs.secondCard;
 
         
         //----------------------------------------------------
