@@ -121,7 +121,7 @@ export default {
         width:80vw;
         max-width: $infosCardWidth;
         min-height: $infosCardHeight;
-        color:$white;
+        color:$dark;
         padding-bottom: 0.5rem;
         transition: background-color 1.5s ease-in-out;
         border-radius: 20px;
