@@ -10,7 +10,7 @@ export default createStore({
         title:"Etudiant en CMI informatique",
         description:"Etudiant en 3ème année à L'Université Savoie Mont Blanc, je suis à l'écoute, toujours curieux et créatif.",
         discoverBtn:"Découvrir",
-        score:["Bravo !","Génial !","Incroyable !","Excellent !","Magnifique !","Fantastique !","Superbe !","Incroyable !","Chomage ?"],
+        score:["Bravo !","Génial !","Incroyable !","Excellent !","Magnifique !","Fantastique !","Superbe !","Incroyable !","Chômage ?"],
 
       },
       en:{
@@ -21,6 +21,23 @@ export default createStore({
       }
     },
     projects:[
+      {
+        id:6,
+        photo:"burstyourbubble.png",
+        link:"https://burstyourbubble.heargo.dev",
+        fr:{
+          title:"Éclate ta bulle",
+          date:"2022",
+          description:"Projet personnel, un site pour consulter des articles hors de sa bulle de préférence et de convictions.",
+          labels:["VueJS","Projet personnel","Design","Conception"],
+        },
+        en:{
+          title:"Burst Your Bubble",
+          date:"2022",
+          description:"Personal project, a website to consult articles outside of your bubble of preference and convictions.",
+          labels:["VueJS","Personnal project","Design","Conception"],
+        }
+      },
       {
         id:5,
         photo:"etyva.png",
