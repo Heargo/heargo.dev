@@ -7,6 +7,11 @@ const routes = [
     name: 'Home',
     component: Home
   },
+  {
+    path: '/caseStudy',
+    name: 'CaseStudy',
+    component: () => import('@/views/CaseStudy.vue')
+  }
 ]
 
 const router = createRouter({

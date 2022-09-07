@@ -73,7 +73,7 @@ export default {
             if(y < 0.25){
                 y = -y-0.15;
             }
-            console.log(x,y)
+            // console.log(x,y)
             var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
             inner.style.transform = style;
             inner.style.webkitTransform = style;
@@ -100,7 +100,6 @@ export default {
     .containerProject{
         position: relative;
         width: 100%;
-        height:100%;
         max-height: 500px;
         perspective: 30px;
         margin:2rem 0;

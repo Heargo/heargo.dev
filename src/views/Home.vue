@@ -30,16 +30,14 @@
       </ScrollParallax>
     </div>
     <div class="invisibleSpace"></div>
-
     <!-- Content -->
     <div class="data">
       <!-- Cv card -->
       <ContactCard id="cv"></ContactCard>
-
       <!-- Projects -->
       <div id="projets"></div>
-      <div v-for="(p,i) in this.$store.state.projects" :key="p">
-        <Project :project="p" :side="i%2==0 ? 'left' : 'right'"></Project>
+      <div v-for="(p,i) in this.$store.state.projects" :key="p" :data-aos="'fade-'+(i%2==0 ? 'left' : 'right')" class="projectHolder"> 
+        <Project :project="p" :side="i%2==0 ? 'left' : 'right'" ></Project>
       </div>
     </div>
   </div>
@@ -51,7 +49,7 @@ import ContactCard from '@/components/ContactCard.vue'
 import ScrollParallax from 'vue3-parallax/src/components/ScrollParallax.vue';
 import Toggle from '@/components/Toggle.vue';
 import ExternalsLinks from '@/components/ExternalsLinks.vue';
-
+import AOS from 'aos';
 export default {
   name: 'Home',
   components: {
@@ -65,6 +63,7 @@ export default {
     //get square 
     var square = document.querySelector('.square');
     this.animate(square,"drop",2000)
+    AOS.refresh();
   },
   methods:{
     animate(element,animation,time){
@@ -116,6 +115,7 @@ export default {
       height: 100vh;
     }
     .data{
+      overflow: hidden;
       @include width-under(700px){
         padding-bottom: 2rem;
       }
@@ -260,4 +260,12 @@ export default {
       opacity: 0.7;
       margin:0;
     }
+
+.projectHolder{
+  height: 100vh;
+  max-height: 500px;
+  @include width-under(1000px){
+    height: fit-content;
+  }
+}
 </style>

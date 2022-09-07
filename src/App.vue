@@ -6,15 +6,10 @@
 </template>
 
 
-<script>
-// import Nav from '@/components/Nav.vue'
+<script setup>
+import AOS from 'aos';
 
-export default {
-  name: 'Home',
-  components: {
-    // Nav
-  }
-}
+AOS.init();
 </script>
 
 <style lang="scss">
