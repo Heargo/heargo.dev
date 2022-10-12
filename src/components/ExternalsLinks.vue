@@ -1,6 +1,6 @@
 <template>
     <div class="linksList">
-        <a :href="l.url" v-for="l in links" :key="l">
+        <a :href="l.url" v-for="l in links" :key="l" target="_blank">
             <img :src="require(`@/assets/svg/${l.icon}`)" :alt="l.name">
         </a>
         <div class="verticalBar"></div>
@@ -18,10 +18,16 @@ export default {
                     name:"Github"
                 },
                 {
+                    url:"https://www.linkedin.com/in/hugo-rey-46696b251/",
+                    icon:"linkedin.svg",
+                    name:"Linkedin"
+                },
+                {
                     url:"https://codepen.io/Heargo",
                     icon:"codepen.svg",
                     name:"Codepen"
-                }
+                },
+                
             ]
         }
     }
