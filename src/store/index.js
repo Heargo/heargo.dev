@@ -8,14 +8,14 @@ export default createStore({
     txt:{
       fr:{
         title:"Etudiant en CMI informatique",
-        description:"Etudiant en 3ème année à L'Université Savoie Mont Blanc, je suis à l'écoute, toujours curieux et créatif.",
+        description:"Etudiant en master 1 à L'Université Savoie Mont Blanc, je suis à l'écoute, toujours curieux et créatif.",
         discoverBtn:"Découvrir",
         score:["Bravo !","Génial !","Incroyable !","Excellent !","Magnifique !","Fantastique !","Superbe !","Incroyable !","Chômage ?"],
 
       },
       en:{
         title:"Computer sciences student",
-        description:"Student in 3rd year at the Université Savoie Mont Blanc, I'm a good listener, always curious and creative.",
+        description:"Student in master 1 at the Université Savoie Mont Blanc, I'm a good listener, always curious and creative.",
         discoverBtn:"Discover",
         score:["Good job !","Great !","Amazing !","Excellent !","Wonderful !","Fantastic !","Superb !","Incredible !","Unemployed ?"],
       }
