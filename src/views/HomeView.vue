@@ -44,14 +44,14 @@
 </template>
 
 <script>
-import Project from '@/components/Project.vue'
+import Project from '@/components/ProjectPreview.vue'
 import ContactCard from '@/components/ContactCard.vue'
 import ScrollParallax from 'vue3-parallax/src/components/ScrollParallax.vue';
-import Toggle from '@/components/Toggle.vue';
+import Toggle from '@/components/ToggleLanguage.vue';
 import ExternalsLinks from '@/components/ExternalsLinks.vue';
 import AOS from 'aos';
 export default {
-  name: 'Home',
+  name: 'HomeView',
   components: {
     ScrollParallax,
     Project,

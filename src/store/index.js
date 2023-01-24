@@ -22,6 +22,23 @@ export default createStore({
     },
     projects:[
       {
+        id:7,
+        photo:"devcompass.jpg",
+        link:"https://panel.heargo.dev",
+        fr:{
+          title:"Dev Compass",
+          date:"2023",
+          description:"Projet personnel, un site qui contient un panel de ressources et d'outils pour les développeurs web.",
+          labels:["VueJS","Appwrite","Outil","FullStack","Projet personnel"],
+        },
+        en:{
+          title:"Dev Compass",
+          date:"2023",
+          description:"Personal project, a website that contains a panel of resources and tools for web developers.",
+          labels:["VueJS","Appwrite","Tool","FullStack","Personal project"],
+        }
+      },
+      {
         id:6,
         photo:"burstyourbubble.png",
         link:"https://burstyourbubble.heargo.dev",
