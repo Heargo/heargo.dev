@@ -17,7 +17,7 @@
 </template>
 <script>
 export default {
-    name: 'Project',
+    name: 'ProjectPreview',
     props: ['project', 'side'],
     mounted(){
         var container = this.$refs.containerProject;

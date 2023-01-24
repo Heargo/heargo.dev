@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-    name: 'Toggle',
+    name: 'ToggleLanguage',
     methods:{
         switchLang(){
             this.$store.state.lang = this.$store.state.lang=="en" ? "fr" : "en";
