@@ -22,6 +22,23 @@ export default createStore({
     },
     projects:[
       {
+        id:8,
+        photo:"rpgmanager.png",
+        link:"https://rpg.heargo.dev",
+        fr:{
+          title:"RPG Manager",
+          date:"2023",
+          description:"Projet personnel, une plateform web pour assiter les MJ et les joueurs lors de vos parties de JDR.",
+          labels:["Angular","Appwrite","FullStack","Design","Projet personnel"],
+        },
+        en:{
+          title:"RPG Manager",
+          date:"2023",
+          description:"Personal project, a website that will help GM and players during your RP sessions.",
+          labels:["Angular","Appwrite","FullStack","Design","Personal project"],
+        }
+      },
+      {
         id:7,
         photo:"devcompass.jpg",
         link:"https://panel.heargo.dev",
