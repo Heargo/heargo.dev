@@ -8,7 +8,7 @@
         <textarea name="message" placeholder="Message" required></textarea>
         <input type="hidden" name="redirect" value="https://web3forms.com/success">
 
-        <button type="submit">Send message</button>
+        <button type="submit">{{this.$store.state.txt[this.$store.state.lang].sendMessage}}</button>
     </form>
 </template>
 <script>
@@ -68,7 +68,7 @@ export default {
             border:none;
             text-decoration: none;
             width: 90%;
-            max-width: 250px;
+            max-width: 150px;
             background-color: $better-blue;
             color: $white;
             padding: 0.5rem;
@@ -81,7 +81,7 @@ export default {
                 background-color: $white;
                 color:$better-blue;
                 width: 90%;
-                max-width: 300px;
+                max-width: 180px;
             }
         }
     }
