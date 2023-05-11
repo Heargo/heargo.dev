@@ -183,6 +183,13 @@ export default createStore({
     }
   },
   actions: {
+    // eslint-disable-next-line no-unused-vars
+    scrollToId({commit},id){
+      const el = document.getElementById(id);
+      console.log("scroll to",id,el)
+      if(el)
+        el.scrollIntoView({behavior: "smooth"});
+    }
   },
   modules: {
   }

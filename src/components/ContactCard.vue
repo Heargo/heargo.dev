@@ -3,7 +3,10 @@
         <div class="infos">
             <h2>{{this.$store.state.txt[this.$store.state.lang].title}}</h2>
             <p>{{this.$store.state.txt[this.$store.state.lang].description}}</p>
-            <a :href="'https://cv.heargo.dev/CV_Hugo_Rey_'+this.$store.state.lang+'.pdf'" target="_blank">CV</a>
+            <div class="flex-row">
+                <a :href="'../../cv/CV_Hugo_Rey_'+this.$store.state.lang+'.pdf'" target="_blank">CV</a>
+                <a @click="scrollToContact()" class="contact-btn">Contact me</a>
+            </div>
         </div>
         <img src="@/assets/svg/dev.svg" alt="">
     </div>
@@ -11,6 +14,14 @@
 <script>
 export default {
     name:"ContactCard",
+    mounted(){
+        
+    },
+    methods: {
+        scrollToContact(){
+            this.$store.dispatch('scrollToId','contact')
+        }
+    }
 }
 </script>
 <style lang="scss" scoped>
@@ -67,6 +78,9 @@ export default {
             margin-bottom: .4rem;
             font-family: 'BioRhyme', sans-serif;
         }
+        div{
+            gap: 1rem;
+        }
 
         a{
             outline:none;
@@ -85,6 +99,13 @@ export default {
                 background-color: $white;
                 color:$better-blue;
                 width: 100px;
+            }
+            &.contact-btn{
+                width: 150px;
+
+                &:hover{
+                    width: 180px;
+                }
             }
             
         }
