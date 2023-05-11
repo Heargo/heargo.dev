@@ -39,6 +39,9 @@
       <div v-for="(p,i) in this.$store.state.projects" :key="p" :data-aos="'fade-'+(i%2==0 ? 'left' : 'right')" class="projectHolder"> 
         <Project :project="p" :side="i%2==0 ? 'left' : 'right'" ></Project>
       </div>
+      <!-- Contact form -->
+      <ContactForm id="contact"></ContactForm>
+      <a class="scroll-up" @click="this.$store.dispatch('scrollToId','home')">scroll up</a>
     </div>
   </div>
 </template>
@@ -46,6 +49,7 @@
 <script>
 import Project from '@/components/ProjectPreview.vue'
 import ContactCard from '@/components/ContactCard.vue'
+import ContactForm from '@/components/ContactForm.vue'
 import ScrollParallax from 'vue3-parallax/src/components/ScrollParallax.vue';
 import Toggle from '@/components/ToggleLanguage.vue';
 import ExternalsLinks from '@/components/ExternalsLinks.vue';
@@ -57,7 +61,8 @@ export default {
     Project,
     ContactCard,
     Toggle,
-    ExternalsLinks
+    ExternalsLinks,
+    ContactForm
   },
   mounted(){
     //get square 
@@ -268,4 +273,17 @@ export default {
     height: fit-content;
   }
 }
+
+.scroll-up{
+  z-index: 100;
+  color:$dark;
+  text-decoration: underline;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  @include width-under(700px){
+    margin-bottom: 50px;
+  }
+}
+
+
 </style>

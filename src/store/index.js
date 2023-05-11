@@ -11,16 +11,34 @@ export default createStore({
         description:"Etudiant en master 1 à L'Université Savoie Mont Blanc, je suis à l'écoute, toujours curieux et créatif.",
         discoverBtn:"Découvrir",
         score:["Bravo !","Génial !","Incroyable !","Excellent !","Magnifique !","Fantastique !","Superbe !","Incroyable !","Chômage ?"],
-
+        sendMessage:"Envoyer",
       },
       en:{
         title:"Computer sciences student",
         description:"Student in master 1 at the Université Savoie Mont Blanc, I'm a good listener, always curious and creative.",
         discoverBtn:"Discover",
         score:["Good job !","Great !","Amazing !","Excellent !","Wonderful !","Fantastic !","Superb !","Incredible !","Unemployed ?"],
+        sendMessage:"Send",
       }
     },
     projects:[
+      {
+        id:8,
+        photo:"rpgmanager.png",
+        link:"https://rpg.heargo.dev",
+        fr:{
+          title:"RPG Manager",
+          date:"2023",
+          description:"Projet personnel, une plateform web pour assiter les MJ et les joueurs lors de vos parties de JDR.",
+          labels:["Angular","Appwrite","FullStack","Design","Projet personnel"],
+        },
+        en:{
+          title:"RPG Manager",
+          date:"2023",
+          description:"Personal project, a website that will help GM and players during your RP sessions.",
+          labels:["Angular","Appwrite","FullStack","Design","Personal project"],
+        }
+      },
       {
         id:7,
         photo:"devcompass.jpg",
@@ -166,6 +184,13 @@ export default createStore({
     }
   },
   actions: {
+    // eslint-disable-next-line no-unused-vars
+    scrollToId({commit},id){
+      const el = document.getElementById(id);
+      console.log("scroll to",id,el)
+      if(el)
+        el.scrollIntoView({behavior: "smooth"});
+    }
   },
   modules: {
   }

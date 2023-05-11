@@ -43,6 +43,7 @@ export default {
         justify-content:center;
         align-items:center;
         flex-wrap:wrap;
+        z-index: 1000;
         
         a{
             margin-bottom:1rem;
@@ -77,6 +78,13 @@ export default {
             a{
                 margin-bottom:0;
                 margin-left: 1rem;
+                img{
+                    filter:brightness(1);
+
+                    &:hover{
+                        filter:brightness(1.8);
+                    }
+                }
             }
         }
     }
