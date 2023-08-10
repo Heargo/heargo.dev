@@ -91,7 +91,11 @@ export default {
     },
     methods:{
         redirect(link){
-            window.open(link, '_blank');
+            if(this.project.deadLink){
+                this.$router.push({name:'Unavailable'})
+            }else{
+                window.open(link, '_blank');
+            }
         }
     }
 }

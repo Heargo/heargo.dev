@@ -1,6 +1,6 @@
 <template>
     <form action="https://api.web3forms.com/submit" method="POST" class="flex-col">
-        <h2>Contact me</h2>
+        <h2>{{this.$store.state.txt[this.$store.state.lang].contactMe}}</h2>
         <input type="hidden" name="access_key" :value="contact_key">
 
         <input type="text" name="name" placeholder="Name" required>
