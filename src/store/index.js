@@ -12,6 +12,7 @@ export default createStore({
         discoverBtn:"Découvrir",
         score:["Bravo !","Génial !","Incroyable !","Excellent !","Magnifique !","Fantastique !","Superbe !","Incroyable !","Chômage ?"],
         sendMessage:"Envoyer",
+        contactMe:"Contactez-moi",
       },
       en:{
         title:"Computer sciences student",
@@ -19,6 +20,7 @@ export default createStore({
         discoverBtn:"Discover",
         score:["Good job !","Great !","Amazing !","Excellent !","Wonderful !","Fantastic !","Superb !","Incredible !","Unemployed ?"],
         sendMessage:"Send",
+        contactMe:"Contact me",
       }
     },
     projects:[

@@ -5,7 +5,7 @@
             <p>{{this.$store.state.txt[this.$store.state.lang].description}}</p>
             <div class="flex-row">
                 <a :href="'../../cv/CV_Hugo_Rey_'+this.$store.state.lang+'.pdf'" target="_blank">CV</a>
-                <a @click="scrollToContact()" class="contact-btn">Contact me</a>
+                <a @click="scrollToContact()" class="contact-btn">{{this.$store.state.txt[this.$store.state.lang].contactMe}}</a>
             </div>
         </div>
         <img src="@/assets/svg/dev.svg" alt="">
@@ -101,7 +101,7 @@ export default {
                 width: 100px;
             }
             &.contact-btn{
-                width: 150px;
+                width: 170px;
 
                 &:hover{
                     width: 180px;
