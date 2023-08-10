@@ -8,6 +8,11 @@ const routes = [
     component: Home
   },
   {
+    path: '/unavailable',
+    name: 'Unavailable',
+    component: () => import('@/views/UnavailableView.vue')
+  },
+  {
     path: '/project/:id',
     name: 'CaseStudy',
     component: () => import('@/views/CaseStudy.vue')

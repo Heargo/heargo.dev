@@ -13,6 +13,12 @@ export default createStore({
         score:["Bravo !","Génial !","Incroyable !","Excellent !","Magnifique !","Fantastique !","Superbe !","Incroyable !","Chômage ?"],
         sendMessage:"Envoyer",
         contactMe:"Contactez-moi",
+        deadLink:{
+          title:"Où est passé le projet ?",
+          exit:"Retourner explorer",
+          description:"Le projet n'est plus disponible, soit parce que la ou les personne.s concernée.s l'ont rendu privé, soit parce que la plateforme hébergeant le projet n'est plus accessible.",
+          contactInfo:"Si vous êtes intéressé par le projet, n'hésitez pas à me contacter !",
+        }
       },
       en:{
         title:"Computer sciences student",
@@ -21,6 +27,12 @@ export default createStore({
         score:["Good job !","Great !","Amazing !","Excellent !","Wonderful !","Fantastic !","Superb !","Incredible !","Unemployed ?"],
         sendMessage:"Send",
         contactMe:"Contact me",
+        deadLink:{
+          title:"Where's the project ?",
+          exit:"Go back to explore",
+          description:"The project is no longer available, either because the individual(s) involved have made it private, or because the platform hosting the project is no longer accessible.",
+          contactInfo:"If you are interested in the project, don't hesitate to contact me !",
+        }
       }
     },
     projects:[
@@ -28,6 +40,7 @@ export default createStore({
         id:8,
         photo:"rpgmanager.png",
         link:"https://rpg.heargo.dev",
+        deadLink:false,
         fr:{
           title:"RPG Manager",
           date:"2023",
@@ -45,6 +58,7 @@ export default createStore({
         id:7,
         photo:"devcompass.jpg",
         link:"https://panel.heargo.dev",
+        deadLink:false,
         fr:{
           title:"Dev Compass",
           date:"2023",
@@ -62,6 +76,7 @@ export default createStore({
         id:6,
         photo:"burstyourbubble.png",
         link:"https://burstyourbubble.heargo.dev",
+        deadLink:false,
         fr:{
           title:"Éclate ta bulle",
           date:"2022",
@@ -79,6 +94,7 @@ export default createStore({
         id:5,
         photo:"etyva.png",
         link:"https://docs.google.com/presentation/d/1tRIjlll_FDFjRgX97BM8dPnYHrTV2g2btfBeuGNzXuw/edit?usp=sharing",
+        deadLink:true,
         fr:{
           title:"ET'YVA",
           date:"2022",
@@ -96,6 +112,7 @@ export default createStore({
         id:4,
         photo:"palettes.jpg",
         link:"https://palettes.heargo.dev/",
+        deadLink:false,
         fr:{
           title:"Palettes previews",
           date:"2022",
@@ -113,40 +130,43 @@ export default createStore({
         id:3,
         photo:"jourune.jpg",
         link:"https://jourune.fr/",
+        deadLink:true,
         fr:{
           title:"Jourune",
           date:"2021",
           description:"Conception, développement et mise en production d'un site de poésie/blog pour Nathalie Kandro.",
-          labels:["Conception","Production","FullStack"],
+          labels:["Conception","Production","FullStack","PHP"],
         },
         en:{
           title:"Jourune",
           date:"2021",
           description:"Design, development and production of a poetry/blog website for Nathalie Kandro.",
-          labels:["Design","Production","FullStack"],
+          labels:["Design","Production","FullStack","PHP"],
         }
       },
       {
         id:2,
         photo:"okydoky.jpg",
         link:"https://docs.google.com/presentation/d/1i40ji1CQChk3njpeW6vigG9gxsOq2lIkMgyx_OPcaps/edit?usp=sharing",
+        deadLink:true,
         fr:{
           title:"Okydoky",
           date:"2021",
           description:"Conception et au développement d'un site web de partage de fichiers autour de communautés.",
-          labels:["Projet universitaire","Frontend","Licence 2","Conception"],
+          labels:["Projet universitaire","Frontend","Licence 2","Conception","PHP"],
         },
         en:{
           title:"Okydoky",
           date:"2021",
           description:"Design and development of a file sharing website around communities.",
-          labels:["School project","Frontend","2nd year","Conception"],
+          labels:["School project","Frontend","2nd year","Conception","PHP"],
         }
       },
       {
         id:1,
         photo:"lostcolor.jpg",
         link:"https://github.com/Heargo/LostColor",
+        deadLink:false,
         fr:{
           title:"Lost Color",
           date:"2020-2021",
@@ -163,7 +183,8 @@ export default createStore({
       {
         id:0,
         photo:"visi.png",
-        link:"https://www.lama.univ-savoie.fr/mediawiki/index.php/G%C3%A9n%C3%A9ration_fractale_de_terrains",
+        link:"https://github.com/Heargo/VISI201_G-n-ration_terrains",
+        deadLink:false,
         fr:{
           title:"Generation fractale de terrain",
           date:"2020",
