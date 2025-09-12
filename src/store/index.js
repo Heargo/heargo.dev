@@ -85,7 +85,7 @@ export default createStore({
       {
         id: 8,
         photo: "rpgmanager.png",
-        link: "https://rpg.heargo.dev",
+        link: "https://rpg.app.heargo.dev",
         deadLink: false,
         fr: {
           title: "RPG Manager",
@@ -117,7 +117,7 @@ export default createStore({
       {
         id: 7,
         photo: "devcompass.jpg",
-        link: "https://panel.heargo.dev",
+        link: "https://panel.app.heargo.dev",
         deadLink: false,
         fr: {
           title: "Dev Compass",
@@ -150,7 +150,7 @@ export default createStore({
         id: 6,
         photo: "burstyourbubble.png",
         link: "https://burstyourbubble.heargo.dev",
-        deadLink: false,
+        deadLink: true,
         fr: {
           title: "Éclate ta bulle",
           date: "2022",
@@ -201,8 +201,8 @@ export default createStore({
       {
         id: 4,
         photo: "palettes.jpg",
-        link: "https://palettes.heargo.dev/",
-        deadLink: false,
+        link: "https://palettes.app.heargo.dev/",
+        deadLink: true,
         fr: {
           title: "Palettes previews",
           date: "2022",
