@@ -7,9 +7,9 @@ export default createStore({
     lang: "en",
     txt: {
       fr: {
-        title: "Etudiant Master 2, CMI informatique",
+        title: "Développeur web fullstack",
         description:
-          "Etudiant en 2ème année de Master à L'Université Savoie Mont Blanc, je suis à l'écoute, toujours curieux et créatif.",
+          "Diplomé de Master informatique à L'Université Savoie Mont Blanc, je suis à l'écoute, toujours curieux et créatif.",
         discoverBtn: "Découvrir",
         score: [
           "Bravo !",
@@ -34,9 +34,9 @@ export default createStore({
         },
       },
       en: {
-        title: "Computer sciences student",
+        title: "Fullstack web developer",
         description:
-          "Student in 2nd year of Master at the Université Savoie Mont Blanc, I'm a good listener, always curious and creative.",
+          "Graduate from a Master's degree at the Université Savoie Mont Blanc, I'm a good listener, always curious and creative.",
         discoverBtn: "Discover",
         score: [
           "Good job !",
