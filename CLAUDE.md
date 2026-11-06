@@ -1,6 +1,6 @@
 # heargo.dev
 
-Hugo Rey's bilingual (FR/EN) portfolio site: Vue 3 + Vue CLI, Vuex, Vue Router, SCSS. Conventions, structure and commands are in [docs/rules.md](docs/rules.md); read it before you change code.
+Hugo Rey's bilingual (FR/EN) portfolio site: Vue 3 + Vite, Vuex, Vue Router, SCSS. Conventions, structure and commands are in [docs/rules.md](docs/rules.md); read it before you change code.
 
 ## Branches
 

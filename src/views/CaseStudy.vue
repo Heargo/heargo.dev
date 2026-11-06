@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <h1>{{txt.title}}</h1>
-        <img :src="require(`@/assets/img/${project.photo}`)" alt="">
+        <img :src="imgUrl(project.photo)" alt="">
         <section data-aos="fade-left">
             <p>Balblalballba</p>
         </section>
@@ -15,6 +15,7 @@
 import { ref } from 'vue';
 import { useRoute } from 'vue-router'
 import { useStore } from 'vuex'
+import { imgUrl } from '@/utils/assets'
 
 const store = useStore();
 const route = useRoute();

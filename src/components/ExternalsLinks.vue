@@ -1,14 +1,17 @@
 <template>
     <div class="linksList">
         <a :href="l.url" v-for="l in links" :key="l" target="_blank">
-            <img :src="require(`@/assets/svg/${l.icon}`)" :alt="l.name">
+            <img :src="svgUrl(l.icon)" :alt="l.name">
         </a>
         <div class="verticalBar"></div>
     </div>
 </template>
 <script>
+import { svgUrl } from "@/utils/assets";
+
 export default {
     name:"ExternalsLinks",
+    methods: { svgUrl },
     data(){
         return {
             links:[

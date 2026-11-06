@@ -17,12 +17,12 @@ export default {
     name:"ContactForm",
     data() {
         return {
-            contact_key: process.env.VUE_APP_CONTACT_KEY
+            contact_key: import.meta.env.VUE_APP_CONTACT_KEY
         }
     },
     mounted(){
         console.log(this.contact_key)
-        console.log(process.env.VUE_APP_CONTACT_KEY)
+        console.log(import.meta.env.VUE_APP_CONTACT_KEY)
     }
 
 }

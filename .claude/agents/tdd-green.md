@@ -23,7 +23,7 @@ You turn one ticket's tests **green**. Your brief names the ticket file.
 
 1. The `## Red` run command passes, piped through `tail -30`.
 2. The full unit suite passes everything the baseline passed (`npm test 2>&1 | tail -8`).
-3. `npm run lint -- --no-fix <files you touched>` is clean, and `npm run build 2>&1 | tail -5` succeeds.
+3. `npx eslint <files you touched>` is clean, and `npm run build 2>&1 | tail -5` succeeds.
 4. `git diff --name-only` (unstaged) lists no test file.
 
 ## Hand-off

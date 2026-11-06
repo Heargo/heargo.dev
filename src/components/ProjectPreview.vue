@@ -25,13 +25,15 @@
       </div>
       <img
         class="photo"
-        :src="require(`@/assets/img/${project.photo}`)"
+        :src="imgUrl(project.photo)"
         :alt="project[this.$store.state.lang].title"
       />
     </div>
   </div>
 </template>
 <script>
+import { imgUrl } from "@/utils/assets";
+
 export default {
   name: "ProjectPreview",
   props: ["project", "side"],
@@ -100,6 +102,7 @@ export default {
     container.onmouseenter = onMouseEnterHandler;
   },
   methods: {
+    imgUrl,
     redirect(link) {
       if (this.project.deadLink) {
         this.$router.push({ name: "Unavailable" });

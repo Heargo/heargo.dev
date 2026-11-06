@@ -1,30 +1,16 @@
-# template_vue
+# heargo.dev
 
-## Project setup
-```
-npm install
-```
+Hugo Rey's portfolio site. Vue 3 + Vite.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Requires Node `^20.19.0 || >=22.12.0`.
 
-### Compiles and minifies for production
-```
-npm run build
+```sh
+npm install      # install dependencies
+npm run dev      # dev server with hot reload
+npm run build    # production build in dist/
+npm run preview  # serve the production build locally
+npm test         # unit tests (Vitest)
+npm run lint     # ESLint
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-### Vulnerabilies
-vulnerabilities are not a problem because they are only for development build. For production build check with :
-```
-npm audit --only=prod
-```
+The contact form reads its access key from `VUE_APP_CONTACT_KEY` (in `.env.local` or the host's env).
