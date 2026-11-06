@@ -2,7 +2,9 @@
 
 The site serves the CVs from `public/cv/` (`CV_Hugo_Rey_fr.pdf`, `CV_Hugo_Rey_en.pdf`); the CV button picks the file for the current language.
 
-- **French**: made in Canva. Export it as PDF and replace `public/cv/CV_Hugo_Rey_fr.pdf`.
+The public CVs carry **no phone number or email**, so bots scraping the site can't harvest them; the Contact block only links to https://cv.app.heargo.dev.
+
+- **French**: made in Canva. Remove the phone and email lines in Canva, export it as PDF and replace `public/cv/CV_Hugo_Rey_fr.pdf`.
 - **English**: [`cv_en.html`](cv_en.html) recreates the Canva layout (A4, `#274977` blue, Glacial Indifference + Raleway) with the translated text. When the French CV changes, update the text here and regenerate:
 
 ```sh

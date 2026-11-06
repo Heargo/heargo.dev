@@ -2,36 +2,84 @@
 @use "variables" as *;
 @use "normalize";
 
-
 //----------------------------------
 //-----------GLOBAL STYLE-----------
 //----------------------------------
 
-*{
-    font-family: 'Raleway', sans-serif;
+:root {
+    color-scheme: light;
+    --ink: #{$ink};
+    --cream: #{$cream};
+    --accent: #{$accent};
 }
 
+html {
+    scroll-behavior: smooth;
+    background: $ink;
+}
+
+body {
+    font-family: $font-body;
+    color: $ink;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+// Form controls don't inherit fonts by default.
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+::selection {
+    background: rgba($accent, 0.25);
+    color: $ink;
+}
 
 .noselect {
-    -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none; /* Safari */
-       -khtml-user-select: none; /* Konqueror HTML */
-         -moz-user-select: none; /* Old versions of Firefox */
-          -ms-user-select: none; /* Internet Explorer/Edge */
-              user-select: none; /* Non-prefixed version, currently
-                                    supported by Chrome, Edge, Opera and Firefox */
-  }
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
 
-.flex-row{
+.flex-row {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
-.flex-col{
+.flex-col {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }

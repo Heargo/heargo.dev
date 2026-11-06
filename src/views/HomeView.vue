@@ -49,19 +49,31 @@
       <ContactCard id="cv"></ContactCard>
       <!-- Projects -->
       <div id="projets"></div>
+      <ProjectTabs></ProjectTabs>
       <div
-        v-for="(p, i) in this.$store.state.projects"
-        :key="p"
-        :data-aos="'fade-' + (i % 2 == 0 ? 'left' : 'right')"
-        class="projectHolder"
+        id="projects-panel"
+        class="projects"
+        role="tabpanel"
+        :aria-labelledby="'tab-' + this.$store.state.projectFilter"
       >
-        <Project :project="p" :side="i % 2 == 0 ? 'left' : 'right'"></Project>
+        <div
+          v-for="(p, i) in this.$store.getters.filteredProjects"
+          :key="p.id"
+          :data-aos="'fade-' + (i % 2 == 0 ? 'left' : 'right')"
+          class="projectHolder"
+        >
+          <Project :project="p" :side="i % 2 == 0 ? 'left' : 'right'"></Project>
+        </div>
       </div>
       <!-- Contact form -->
       <ContactForm id="contact"></ContactForm>
-      <a class="scroll-up" @click="this.$store.dispatch('scrollToId', 'home')"
-        >scroll up</a
+      <button
+        type="button"
+        class="scroll-up"
+        @click="this.$store.dispatch('scrollToId', 'home')"
       >
+        scroll up
+      </button>
     </div>
   </div>
 </template>
@@ -73,6 +85,7 @@ import ContactForm from "@/components/ContactForm.vue";
 import ScrollParallax from "vue3-parallax/src/components/ScrollParallax.vue";
 import Toggle from "@/components/ToggleLanguage.vue";
 import ExternalsLinks from "@/components/ExternalsLinks.vue";
+import ProjectTabs from "@/components/ProjectTabs.vue";
 import AOS from "aos";
 export default {
   name: "HomeView",
@@ -83,6 +96,13 @@ export default {
     Toggle,
     ExternalsLinks,
     ContactForm,
+    ProjectTabs,
+  },
+  watch: {
+    // Newly rendered cards must be registered with AOS, or they stay hidden.
+    "$store.state.projectFilter"() {
+      this.$nextTick(() => AOS.refreshHard());
+    },
   },
   mounted() {
     //get square
@@ -122,14 +142,7 @@ export default {
 .container {
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to top,
-    $dark,
-    $blue,
-    $marron,
-    $marronlight,
-    $white
-  ); /* Standard syntax */
+  background: linear-gradient(to top, $ink, $indigo, $mauve, $rose, $cream);
 
   .invisibleSpace {
     height: 110vh;
@@ -148,6 +161,11 @@ export default {
   }
   .data {
     overflow: hidden;
+    gap: 1rem;
+    @include width-under(1000px) {
+      box-sizing: border-box;
+      padding-inline: 1rem;
+    }
     @include width-under(700px) {
       padding-bottom: 2rem;
     }
@@ -275,7 +293,7 @@ export default {
   width: 80vw;
   height: 100vh;
   opacity: 0.7;
-  transition: all 0.2s ease;
+  transition: width 0.2s ease;
 }
 .Number {
   position: fixed;
@@ -309,22 +327,38 @@ export default {
   margin: 0;
 }
 
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
 .projectHolder {
   height: 100vh;
   max-height: 500px;
   @include width-under(1000px) {
     height: fit-content;
+    max-height: none;
+    width: 100%;
   }
 }
 
 .scroll-up {
+  @include button(ghost);
   z-index: 100;
-  color: $dark;
-  text-decoration: underline;
-  margin-bottom: 1rem;
-  cursor: pointer;
+  margin-bottom: 2rem;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.85rem;
+  color: $cream;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  &:hover {
+    color: $ink;
+  }
   @include width-under(700px) {
-    margin-bottom: 50px;
+    margin-bottom: 90px;
   }
 }
 </style>

@@ -1,24 +1,42 @@
+// Injected into every component style block: variables and mixins only, never CSS output.
+
 //-------------------------------
-//-----------VARIABLES-----------
+//------------PALETTE------------
+//-------------------------------
+// The site's original dusk palette.
+
+$ink: #22223b; // deepest indigo, body text on light surfaces
+$indigo: #4a4e69; // muted indigo, mid gradient
+$mauve: #9a8c98; // dusty mauve
+$rose: #c9ada7; // warm rose
+$cream: #f2e9e4; // lightest surface, text on dark
+
+$accent: #273494; // primary action
+$raspberry: #64141e; // hero square base, project dates
+
+// Legacy names, kept so older styles still compile.
+$dark: $ink;
+$dark2: rgba($ink, 0.85);
+$blue: $indigo;
+$better-blue: $accent;
+$marron: $mauve;
+$marronlight: $rose;
+$white: $cream;
+$dark-red: rgba($raspberry, 0.8);
+
+//-------------------------------
+//-------------SHAPE-------------
 //-------------------------------
 
-$red:rgb(223, 52, 52);
-$dark-red :#64141ecc;
-$white: white;
-$orange: #FCA311;
-$dark-blue: #14213D;
-$grey: #E5E5E5;
+$radius-lg: 24px;
+$radius-md: 16px;
+$radius-pill: 999px;
+$shadow-soft: 0 18px 40px -18px rgba($ink, 0.55);
+$shadow-lift: 0 22px 48px -16px rgba($ink, 0.6);
+$ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 
-
-$dark:#22223b;
-$dark2: rgb(34, 34, 59,0.85);
-$blue:#4a4e69;
-$better-blue: #273494;
-$marron:#9a8c98;
-$marronlight:#c9ada7;
-$white:#f2e9e4;
-
-$formbgcolor: $grey;
+$font-display: "BioRhyme", serif;
+$font-body: "Raleway", system-ui, sans-serif;
 
 //---------------------------------
 //-----------BREAKPOINTS-----------
@@ -36,3 +54,61 @@ $formbgcolor: $grey;
     }
 }
 
+//---------------------------------
+//------------SURFACES-------------
+//---------------------------------
+
+// Frosted glass card used for every content panel.
+@mixin glass($alpha: 0.22) {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, $alpha + 0.08),
+        rgba(255, 255, 255, $alpha - 0.06)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: $shadow-soft, inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    backdrop-filter: blur(16px) saturate(150%);
+    border-radius: $radius-lg;
+}
+
+@mixin focus-ring {
+    &:focus-visible {
+        outline: 3px solid $accent;
+        outline-offset: 3px;
+    }
+}
+
+// Pill button: flat accent by default, translucent with `ghost`.
+@mixin button($variant: solid) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1.3rem;
+    border-radius: $radius-pill;
+    font-family: $font-body;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    @include focus-ring;
+
+    @if $variant == solid {
+        color: $cream;
+        background-color: $accent;
+        border: 2px solid $accent;
+        &:hover {
+            background-color: $cream;
+            color: $accent;
+        }
+    } @else {
+        color: $ink;
+        background-color: rgba(255, 255, 255, 0.35);
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        &:hover {
+            background-color: $cream;
+            border-color: $cream;
+        }
+    }
+}
