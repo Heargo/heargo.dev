@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <h1>{{txt.title}}</h1>
-        <img :src="require(`@/assets/img/${project.photo}`)" alt="">
+        <img :src="imgUrl(project.photo)" alt="">
         <section data-aos="fade-left">
             <p>Balblalballba</p>
         </section>
@@ -15,6 +15,7 @@
 import { ref } from 'vue';
 import { useRoute } from 'vue-router'
 import { useStore } from 'vuex'
+import { imgUrl } from '@/utils/assets'
 
 const store = useStore();
 const route = useRoute();
@@ -30,8 +31,9 @@ var txt = ref(project[store.state.lang]);
 .container {
     width: 100%;
     min-height: 100vh;
+    min-height: 100dvh;
     overflow-x: hidden;
-    background: linear-gradient(to top, $dark,$blue, $marron,$marronlight, $white); /* Standard syntax */
+    background: linear-gradient(to top, $ink, $indigo, $mauve, $rose, $cream);
 }
 
 section {
@@ -50,11 +52,8 @@ section {
 
 p{
     margin:0;
-    padding: 1rem;
-    background-color: hsla(0,0%,100%,.15);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
+    padding: 1rem 1.5rem;
+    @include glass(0.15);
 }
 
 img{
@@ -64,5 +63,7 @@ img{
     object-fit: cover;
     object-position: center;
     margin-bottom: 2rem;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-lift;
 }
 </style>

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "additionalDirectories": [
+      "../sql-monitoring-front",
+      "../sql-monitoring-back",
+      "../sql-monitoring-ai",
+      "../sql-monitoring-e2e"
+    ],
+    "allow": ["Bash(git status:*)", "Bash(git diff:*)", "Bash(npx jest:*)"]
+  }
+}

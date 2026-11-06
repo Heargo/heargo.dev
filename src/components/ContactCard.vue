@@ -3,9 +3,9 @@
         <div class="infos">
             <h2>{{this.$store.state.txt[this.$store.state.lang].title}}</h2>
             <p>{{this.$store.state.txt[this.$store.state.lang].description}}</p>
-            <div class="flex-row">
-                <a :href="'../../cv/CV_Hugo_Rey_'+this.$store.state.lang+'.pdf'" target="_blank">CV</a>
-                <a @click="scrollToContact()" class="contact-btn">{{this.$store.state.txt[this.$store.state.lang].contactMe}}</a>
+            <div class="actions">
+                <a :href="'/cv/CV_Hugo_Rey_'+this.$store.state.lang+'.pdf'" target="_blank" rel="noopener" class="cv-btn">CV</a>
+                <a href="#contact" @click.prevent="scrollToContact()" class="contact-btn">{{this.$store.state.txt[this.$store.state.lang].contactMe}}</a>
             </div>
         </div>
         <img src="@/assets/svg/dev.svg" alt="">
@@ -14,9 +14,6 @@
 <script>
 export default {
     name:"ContactCard",
-    mounted(){
-        
-    },
     methods: {
         scrollToContact(){
             this.$store.dispatch('scrollToId','contact')
@@ -25,91 +22,74 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-
 .contactCard {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
-    position:relative;
+    position: relative;
     width: 80vw;
     max-width: 700px;
     height: 600px;
-    img{
+
+    img {
         width: auto;
         max-width: 700px;
         transform: translateX(150px);
-        @include width-under(1000px){
+        filter: drop-shadow(0 20px 30px rgba($ink, 0.2));
+        @include width-under(1000px) {
             display: none;
         }
     }
-    .infos{
+
+    .infos {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
         align-items: flex-start;
         position: absolute;
         top: 100px;
         left: -100px;
-        width:500px ;
-        @include width-under(1000px){
-            width:95% ;
-            left: -16px;
-            top: 200px;
-        }
-        padding:1.5rem;
-        border-radius: 20px;
-        background-color: hsla(0,0%,100%,.25);
-        backdrop-filter: blur(5px);
+        width: 500px;
+        box-sizing: border-box;
+        padding: 2rem;
         z-index: 10;
+        @include glass(0.24);
 
-        h2,p{
+        @include width-under(1000px) {
+            width: 100%;
+            left: 0;
+            top: 160px;
+            padding: 1.5rem;
+        }
+
+        h2,
+        p {
             margin: 0;
-            color:$dark;
+            color: $ink;
             text-align: start;
-            
         }
-        p{
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+        h2 {
+            font-family: $font-display;
+            font-size: clamp(1.6rem, 4vw, 2.1rem);
+            line-height: 1.15;
+            margin-bottom: 0.75rem;
         }
-        h2{
-            font-size: 2rem;
-            margin-bottom: .4rem;
-            font-family: 'BioRhyme', sans-serif;
+        p {
+            font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
         }
-        div{
-            gap: 1rem;
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
         }
-
-        a{
-            outline:none;
-            border:none;
-            text-decoration: none;
-            width: 70px;
-            background-color: $better-blue;
-            color: $white;
-            padding: 0.5rem;
-            border-radius: 20px;
-            transition: all .5s ease;
-            text-align: center;
-            font-size: 1.4rem;
-            cursor: pointer;
-            &:hover{
-                background-color: $white;
-                color:$better-blue;
-                width: 100px;
-            }
-            &.contact-btn{
-                width: 170px;
-
-                &:hover{
-                    width: 180px;
-                }
-            }
-            
+        .cv-btn {
+            @include button(ghost);
+        }
+        .contact-btn {
+            @include button(solid);
         }
     }
 }
-    
 </style>

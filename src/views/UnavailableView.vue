@@ -23,54 +23,41 @@ const text = store.state.txt[store.state.lang].deadLink;
 .container {
   width: 100%;
   min-height: 100vh;
-  background-color: $white;
+  min-height: 100dvh;
+  background: linear-gradient(to bottom, $cream, $rose);
 }
 section {
   width: 90%;
   max-width: 700px;
   min-height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: $dark;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
+  padding: 3rem 0;
+  gap: 1.5rem;
+  color: $ink;
   text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-family: $font-display;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
 }
 
 img {
   width: 80%;
-  max-width: 500px;
-  max-height: 50vh;
+  max-width: 460px;
+  max-height: 45vh;
 }
 
 p {
   margin: 0;
-  padding: 1rem;
-  background-color: hsla(0, 0%, 100%, 0.15);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  background-color: $marronlight;
+  padding: 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
   text-align: start;
-  letter-spacing: 0.05rem;
+  @include glass(0.35);
 }
 
 .exit {
-  margin: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  background-color: $dark;
-  color: $white;
-  transition: all 0.5s ease;
-  border: $white solid 2px;
-  cursor: pointer;
-  text-decoration: none;
-  &:hover {
-    background-color: $white;
-    color: $dark;
-    border: $dark solid 2px;
-  }
+  @include button(solid);
 }
 </style>

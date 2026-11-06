@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import ScrollParallax from 'vue3-parallax/src/components/ScrollParallax.vue';
+import 'aos/dist/aos.css'
+import './styles/global.scss'
 
 const app = createApp(App);
 app.component('scroll-parallax', ScrollParallax);

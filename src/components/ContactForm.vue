@@ -3,9 +3,12 @@
         <h2>{{this.$store.state.txt[this.$store.state.lang].contactMe}}</h2>
         <input type="hidden" name="access_key" :value="contact_key">
 
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" placeholder="Message" required></textarea>
+        <label class="visually-hidden" for="contact-name">Name</label>
+        <input id="contact-name" type="text" name="name" placeholder="Name" autocomplete="name" required>
+        <label class="visually-hidden" for="contact-email">Email</label>
+        <input id="contact-email" type="email" name="email" placeholder="Email" autocomplete="email" required>
+        <label class="visually-hidden" for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" placeholder="Message" required></textarea>
         <input type="hidden" name="redirect" value="https://web3forms.com/success">
 
         <button type="submit">{{this.$store.state.txt[this.$store.state.lang].sendMessage}}</button>
@@ -17,72 +20,71 @@ export default {
     name:"ContactForm",
     data() {
         return {
-            contact_key: process.env.VUE_APP_CONTACT_KEY
+            contact_key: import.meta.env.VUE_APP_CONTACT_KEY
         }
     },
-    mounted(){
-        console.log(this.contact_key)
-        console.log(process.env.VUE_APP_CONTACT_KEY)
-    }
-
 }
 
 </script>
 <style lang="scss" scoped>
-    form{
-        border-radius: 20px;
-        background-color: hsla(0,0%,100%,.25);
-        backdrop-filter: blur(5px);
-        padding: 1rem;
-        width: calc(80% - 2rem);
-        margin-top: 100px;
-        margin-bottom: 50px;
-        max-width: calc(600px - 2rem);
-        gap: 1rem;
-        h2{
-            font-size: 2rem;
-            margin-bottom: .4rem;
-            color:$dark;
-        }
+form {
+    box-sizing: border-box;
+    // Same width as the project illustration cards (ProjectPreview .photo / mobile card).
+    // (+2px for the illustration card's 1px border on each side)
+    width: calc(min(820px, 80vw) + 2px);
+    @include width-under(1000px) {
+        width: 100%;
+        max-width: 560px;
+    }
+    margin-top: 100px;
+    margin-bottom: 40px;
+    padding: 2rem 1.5rem;
+    gap: 0.9rem;
+    @include glass(0.2);
 
-        input,textarea{
-            width: 90%;
-            max-width: 400px;
-            padding: .5rem;
-            border-radius: 10px;
-            border: none;
-            background-color: hsla(0,0%,100%,.25);
-            backdrop-filter: blur(5px);
-            color:$dark;
-            font-size: 1.2rem;
-            outline: none;
-            resize: none;
-        }
-        textarea{
-            height: fit-content;
-            min-height: 150px;
-        }
+    h2 {
+        font-family: $font-display;
+        font-size: clamp(1.6rem, 4vw, 2.1rem);
+        margin: 0 0 0.5rem;
+        color: $ink;
+    }
 
-        button{
-            outline:none;
-            border:none;
-            text-decoration: none;
-            width: 90%;
-            max-width: 150px;
-            background-color: $better-blue;
-            color: $white;
-            padding: 0.5rem;
-            border-radius: 20px;
-            transition: all .5s ease;
-            text-align: center;
-            font-size: 1.4rem;
-            cursor: pointer;
-            &:hover{
-                background-color: $white;
-                color:$better-blue;
-                width: 90%;
-                max-width: 180px;
-            }
+    input,
+    textarea {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 440px;
+        padding: 0.8rem 1rem;
+        border-radius: $radius-md;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        background-color: rgba(255, 255, 255, 0.4);
+        color: $ink;
+        font-size: 1.05rem;
+        outline: none;
+        resize: none;
+        transition: border-color 0.25s, background-color 0.25s, box-shadow 0.25s;
+
+        &::placeholder {
+            color: rgba($ink, 0.55);
+        }
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        &:focus {
+            border-color: $accent;
+            background-color: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0 0 4px rgba($accent, 0.2);
         }
     }
+    textarea {
+        min-height: 150px;
+    }
+
+    button {
+        @include button(solid);
+        margin-top: 0.5rem;
+        min-width: 160px;
+        font-size: 1.05rem;
+    }
+}
 </style>
