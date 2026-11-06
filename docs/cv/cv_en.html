@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hugo Rey - CV</title>
+<style>
+@font-face { font-family: "Glacial"; src: url(fonts/glacial-indifference-400.ttf); font-weight: 400; }
+@font-face { font-family: "Glacial"; src: url(fonts/glacial-indifference-700.ttf); font-weight: 700; }
+@font-face { font-family: "Glacial"; src: url(fonts/glacial-indifference-400italic.ttf); font-weight: 400; font-style: italic; }
+@font-face { font-family: "Raleway"; src: url(fonts/raleway-latin-400-normal.woff2); font-weight: 400; }
+@font-face { font-family: "Raleway"; src: url(fonts/raleway-latin-700-normal.woff2); font-weight: 700; }
+@font-face { font-family: "Raleway"; src: url(fonts/raleway-latin-400-italic.woff2); font-weight: 400; font-style: italic; }
+@font-face { font-family: "Raleway"; src: url(fonts/raleway-latin-700-italic.woff2); font-weight: 700; font-style: italic; }
+
+@page { size: A4; margin: 0; }
+:root { --blue: #274977; --ink: #111; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  width: 595.28pt; height: 841.89pt; overflow: hidden;
+  padding: 30pt 59pt 0 59pt;
+  font-family: "Glacial", sans-serif; font-size: 9pt; line-height: 12pt; color: var(--ink);
+}
+a { color: inherit; }
+b, .label { font-family: "Raleway", sans-serif; font-weight: 700; }
+i { font-family: "Raleway", sans-serif; font-style: italic; }
+
+h1 { margin: 0; font-weight: 700; font-size: 26pt; line-height: 30pt; letter-spacing: 6pt; color: var(--blue); }
+.role { margin: 2pt 0 0; font-size: 16pt; line-height: 20pt; letter-spacing: 4pt; color: var(--ink); }
+hr { border: none; border-top: 0.9pt solid var(--blue); margin: 13pt 0 0; }
+h2 { margin: 12pt 0 9pt; font-weight: 700; font-size: 15pt; line-height: 18pt; letter-spacing: 2.8pt; color: var(--blue); }
+
+.top { display: flex; gap: 34pt; }
+.top .profile { width: 287pt; text-align: justify; line-height: 14pt; }
+.top .contact { font-size: 10pt; line-height: 13.5pt; }
+.top .profile p, .top .contact p { margin: 0; }
+
+.job-head { display: flex; justify-content: space-between; align-items: baseline; font-size: 10.6pt; margin-top: 2pt; }
+.job-head .date { font-size: 11.7pt; flex-shrink: 0; white-space: nowrap; }
+.job-head + .job-head, .job + .job-head { margin-top: 10pt; }
+ul { margin: 6pt 0 0; padding-left: 15pt; }
+ul li { margin: 0; text-align: justify; }
+ul ul { margin: 0; padding-left: 21pt; list-style: circle; }
+.block { margin-top: 7pt; }
+.indent { padding-left: 10pt; }
+.indent ul { margin: 2pt 0 1pt; }
+.sub { margin: 0; }
+
+.skills { display: grid; grid-template-columns: 1fr 1fr; column-gap: 18pt; row-gap: 16pt; margin-top: 2pt; }
+.skills .wide { grid-column: 1 / -1; width: 410pt; }
+.skills p { margin: 0; }
+
+.edu { display: flex; justify-content: space-between; align-items: baseline; gap: 8pt; font-size: 9.2pt; margin-top: 2pt; white-space: nowrap; }
+.edu .date { font-size: 11.7pt; flex-shrink: 0; }
+.edu-note { font-size: 8.2pt; line-height: 10pt; font-style: italic; text-transform: uppercase; margin: 1pt 0 6pt; }
+</style>
+</head>
+<body>
+  <h1>HUGO REY</h1>
+  <p class="role">EXPERIENCED FULL-STACK DEVELOPER</p>
+  <hr>
+
+  <div class="top">
+    <section class="profile">
+      <h2>PROFILE</h2>
+      <p>Specialized in the Angular/NestJS ecosystem, from design and architecture all the way to production. Curious and creative, I enjoy learning and sharing my knowledge.</p>
+    </section>
+    <section class="contact">
+      <h2>CONTACT</h2>
+      <p>+33 7 82 51 20 40</p>
+      <p><a href="mailto:hrey222@gmail.com" style="text-decoration:none">hrey222@gmail.com</a></p>
+      <p><a href="https://cv.app.heargo.dev">https://cv.app.heargo.dev</a></p>
+    </section>
+  </div>
+  <hr style="margin-top:22pt">
+
+  <h2>PROFESSIONAL EXPERIENCE</h2>
+  <div class="job-head"><span><b>BERNARD DUMAS</b> - LEAD FULL-STACK DEVELOPER (FREELANCE)</span><span class="date">January 2025 - Present</span></div>
+  <ul class="job">
+    <li>Design, development, deployment and maintenance of a highly customizable real-time dashboarding tool. (<i>Angular</i>, <i>NestJS</i>, <i>PostgreSQL</i>, <i>Docker</i>)</li>
+    <li>Implementation of a microservices architecture.</li>
+    <li>Added machine learning features. (<i>Python</i>, <i>FastAPI</i>)</li>
+    <li>Technical mentoring of a developer on part of the project: code reviews and technical support.</li>
+    <li>Set up automated end-to-end tests to ensure the reliability of core features. (<i>Playwright</i>)</li>
+    <li>Wrote technical and functional documentation for the client.</li>
+  </ul>
+
+  <div class="job-head" style="margin-top:12pt"><span><b>AMILTONE</b> - FULL-STACK DEVELOPER</span><span class="date">September 2023 - Present</span></div>
+  <div class="block">
+    <p class="sub"><b>Competence center for CBA Informatique Libérale - 1 year</b></p>
+    <div class="indent">
+      Goal: continuous improvement of the MILO mobile and web app. (<i>Angular</i>, <i>Ionic</i>)<br>
+      Highlights:
+      <ul><li>Initiated a new frontend architecture that makes adding features simpler.</li>
+          <li>Rebuilt the calendar with significant performance gains: 90% faster loading.</li></ul>
+    </div>
+    <p class="sub"><b>Service center for Data New Road - 1 year</b></p>
+    <div class="indent">
+      Goal: turn the legacy application into a white-label product and fully rewrite it in Angular 19.<br>
+      Highlights (<i>Angular</i>, <i>NestJS</i>):
+      <ul><li>Rebuilt the form system and added real-time updates via SSE.</li>
+          <li>Developed the signature microservice.</li>
+          <li>Developed a CSV reference-data import system with fine-grained error handling.</li></ul>
+    </div>
+    <p class="sub"><b>Development for various clients: APRR, B2PWeb (<i style="font-weight:700">Angular, NodeJS, MongoDB</i>) - 1 year</b></p>
+    <p class="sub"><b>Contributed to the internal design system and starter kits - 3 months</b></p>
+  </div>
+  <hr style="margin-top:16pt">
+
+  <h2 style="margin-top:14pt">SKILLS &amp; LANGUAGES</h2>
+  <div class="skills">
+    <div><p class="label">Programming languages</p><p>TypeScript, JavaScript, Java, Python, PHP, C#, C, C++, HTML/CSS, PostgreSQL, MongoDB.</p></div>
+    <div><p class="label">Frameworks - Tools</p><p>Angular, Spring Boot, NodeJS, NestJS, TypeORM, Vue.js 3, Ionic, Playwright, Docker, Git, Appwrite, Codex, Ollama.</p></div>
+    <div class="wide"><p class="label">Languages &amp; Expertise</p><p>English TOEIC 975 (C1 level), agile methodology (SCRUM), machine learning knowledge, microservices architecture, clean code, automated testing.</p></div>
+  </div>
+  <hr style="margin-top:14pt">
+
+  <h2 style="margin-top:13pt">EDUCATION</h2>
+  <div class="edu"><span><b>MASTER'S IN ENGINEERING: COMPUTER SCIENCE -</b> UNIVERSITÉ SAVOIE MONT BLANC</span><span class="date">2019 - 2024</span></div>
+  <p class="edu-note">Integrated bachelor-master track</p>
+  <div class="edu"><span><b>BSC (HONS) IN COMPUTING IN GAMES DEVELOPMENT</b> - DUNDALK INSTITUTE OF TECHNOLOGY</span><span class="date">2022 - 2023</span></div>
+  <p class="edu-note">Erasmus - Ireland</p>
+  <div class="edu"><span><b>BACHELOR'S DEGREE IN COMPUTER SCIENCE -</b> UNIVERSITÉ SAVOIE MONT BLANC</span><span class="date">2019 - 2022</span></div>
+</body>
+</html>
