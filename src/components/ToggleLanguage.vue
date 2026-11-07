@@ -1,12 +1,23 @@
 <template>
-    <select class="">
-        <option value="en" selected="$store.state.lang=='fr'" @click="switchLang('en')">EN</option>
-        <option value="fr" selected="$store.state.lang=='en'" @click="switchLang('fr')">FR</option>
-    </select>
+    <div class="lang-switch" role="group" aria-label="Language">
+        <button
+            v-for="lang in langs"
+            :key="lang"
+            type="button"
+            :class="{ active: $store.state.lang === lang }"
+            :aria-pressed="$store.state.lang === lang"
+            @click="switchLang(lang)"
+        >
+            {{ lang.toUpperCase() }}
+        </button>
+    </div>
 </template>
 <script>
 export default {
     name: 'ToggleLanguage',
+    data() {
+        return { langs: ['fr', 'en'] };
+    },
     mounted(){
         this.getLangFromBrowser();
     },
@@ -16,7 +27,6 @@ export default {
         },
         getLangFromBrowser(){
             let lang = navigator.language || navigator.userLanguage;
-            console.log('lang',lang)
             if(lang.includes("fr")){
                 this.$store.state.lang = "fr";
             }else{
@@ -27,23 +37,37 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-$padding:4px;
-select{
+.lang-switch {
     position: fixed;
     top: 1rem;
     left: 1rem;
-    width: 60px;
-    height: 30px;
-    outline: none;
-    border: none;
-    background-color: hsla(0,0%,100%,.25);
-    backdrop-filter: blur(5px);
-    border-radius: 10px;
-    padding: .5rem;
-    padding:$padding;
-    cursor: pointer;
     z-index: 100;
+    display: flex;
+    padding: 4px;
+    gap: 2px;
+    @include glass(0.25);
+    border-radius: $radius-pill;
 
+    button {
+        border: none;
+        background: transparent;
+        color: $ink;
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        padding: 0.4rem 0.75rem;
+        border-radius: $radius-pill;
+        cursor: pointer;
+        transition: background-color 0.3s $ease-out, color 0.3s $ease-out;
+        @include focus-ring;
+
+        &:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.45);
+        }
+        &.active {
+            background: $ink;
+            color: $cream;
+        }
+    }
 }
- 
 </style>
